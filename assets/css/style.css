@@ -197,17 +197,17 @@ p {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  font-family: "Nunito", sans-serif !important;
-  font-size: 24px !important;
-  color: #1A1A1A !important;
+  font-family: "Nunito", sans-serif;
+  font-size: 24px;
+  color: #1A1A1A;
 }
-.header a {
+.header__menu a {
   font-family: "DM Sans", sans-serif;
   font-size: 18px;
   color: #1A1A1A;
   margin-right: 30px;
 }
-.header a:hover {
+.header__menu a:hover {
   color: #086CF9;
 }
 .header__dot {
