@@ -1,0 +1,696 @@
+@import "./nullstyle";
+@import "./mixins";
+@import "./variables";
+@import "./fonts";
+html {
+    scroll-behavior: smooth;
+}
+.container{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+body{
+    position: relative;
+}
+p{
+    max-width: 540px;
+    font-family: $sub-title-ff;
+    font-size: $standart-fz;
+    color: $secondary-color-light;
+}
+.button{
+    display: inline-block;
+    font-family: $sub-title-ff;
+    font-size: $standart-fz;
+    color: $contrast-color;
+    background: $primary-color;
+    border-radius: 4px;
+    padding: 16px 32px;
+    @media screen and (max-width:768px) {
+        font-size: $standart-fz_mobile;
+        padding: 12px 24px;
+    }
+}
+.title{
+    font-family: $title-ff;
+    font-size: $title-fz;
+    color: $secondary-color-dark;
+    text-align: center;
+    margin-bottom: 30px;
+    @media screen and (max-width: 500px){
+        font-size: $title-fz_mobile;
+    }
+}
+.header{
+    @include flex(space-between);
+    padding: 20px 15px;
+    overflow: hidden;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto 50px auto;
+    &__menu{
+        max-width: 400px;
+        @include flex(space-between);
+        @include transition;
+    }
+    a{
+        font-family: $sub-title-ff;
+        font-size: $standart-fz;
+        color: $secondary-color-dark;
+        margin-right: 30px;
+        &:hover{
+            color: $primary-color;
+        }
+    }
+    &__logo{
+        @include flex($align-items:baseline);
+        font-family: $title-ff;
+        font-size: $big-fz;
+        color: $secondary-color-dark;
+    }
+    &__dot{
+        width: 9px;
+        height: 10px;
+        background: $primary-color;
+        border-radius: 10px;
+        margin: 0 3px 0 3px;
+    }
+    .burger-btn{
+        display: none;
+        z-index: 10;
+        position: relative;
+        width: 30px;
+		height: 20px;
+        cursor: pointer;
+		> span {
+		    position: absolute;
+            background-color: $primary-color;
+		    width: 100%;
+		    height: 3px;
+            border-radius: 18px;
+		    left: 0;
+		    top: 9px;
+		    @include transition;
+		}
+		&:after,
+		&:before {
+		    content: "";
+		    position: absolute;
+            background-color: $primary-color;
+		    width: 100%;
+		    height: 3px;
+            border-radius: 18px;
+		    left: 0;
+		    @include transition;
+		}
+		&:before {
+		    top: 20px;
+		}
+		&:after {
+		    bottom: 20px;
+		}
+		&_active {
+		    span {
+			    opacity: 0;
+                background-color: $primary-color-light;
+		    }
+		    &:before {
+			    transform: rotate(45deg);
+			    top: 9px;
+                background-color: $primary-color-light;
+		    }
+		    &:after {
+			    transform: rotate(-45deg);
+			    bottom: 9px;
+                background-color: $primary-color-light;
+		    }
+		}
+    }
+    @media screen and (max-width:768px){
+        .burger-btn{
+            display: block;
+        }
+        &__menu{
+            position: absolute;
+            max-width: none;
+            z-index: 2;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            padding: 70px 20px 20px 20px;
+            background: $primary-color;
+            @include flex($flex-direction: column);
+            &_active{
+                top: 0;
+            }
+        }
+        &__link{
+            width: 100%;
+            text-align-last: left;
+            margin-bottom: 20px;
+        }
+        a{
+            color: $primary-color-light;
+            &:hover{
+                color: $primary-color-light;
+            }
+        }
+    }
+}
+.main-screen{
+    @include flex(space-between);
+    &__content{
+        flex: 0 0 100%;
+    }
+    &__wrapper{
+        max-width: 430px;
+        width: 100%;
+    }
+    &__title{
+        font-family: $title-ff;
+        font-size: $primary-title-fz;
+        color: $secondary-color-dark;
+        span{
+            color: $primary-color;
+        }
+        margin-bottom: 20px;
+    }
+    p{
+        margin-bottom: 20px;
+    }
+    .button{
+        margin-bottom: 20px;
+    }
+    &__email{
+        margin-bottom: 15px;
+    }
+    &__email, &__phone{
+        @include flex($justify-content: normal);
+        svg{
+            margin-right: 10px;
+        }
+        p{
+            font-size: $big-fz;
+            color: $secondary-color;
+            margin-bottom: 0;
+        }
+    }
+    &__img{
+        img{
+            width: 100%;
+        }
+    }
+    @media screen and (max-width:768px){
+        &__title{
+            font-size: $primary-title-fz_mobile;
+        }
+    }
+    @media screen and (max-width:650px){
+        position: relative;
+        &__title{
+            margin-bottom: 220px;
+        }
+        &__img{
+            position: absolute;
+            max-width: 430px;
+            top: 80px;
+        }
+    }
+    @media screen and (max-width:400px){
+        position: relative;
+        &__title{
+            margin-bottom: 160px;
+        }
+        &__img{
+            max-width: 330px;
+        }
+    }
+    @media screen and (max-width:330px){
+        position: relative;
+        &__title{
+            margin-bottom: 130px;
+            font-size: 40px;
+        }
+        &__img{
+            max-width: 280px;
+            top: 65px;
+        }
+    }
+}
+.servece{
+    padding: 50px 0 70px 0;
+    background: $primary-color-light;
+    &__product{
+        width: 100%;
+        background: $contrast-color;
+        @include flex(space-between);
+        margin-bottom: 30px;
+    }
+    &__content{
+        padding-left: 50px;
+    }
+    p{
+        font-family: $title-ff;
+        font-size: $services-fz;
+        margin-bottom: 30px;
+    }
+    &__img{
+        width: 300px;
+    }
+    @media screen and (max-width: 768px) {
+        &__product{
+            flex-direction: column-reverse;
+            width: 60%;
+            margin: 0 auto 30px auto;
+        }
+        &__content{
+            padding: 0 10px 20px 10px;
+            text-align: center;
+        }
+        &__img{
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        p{
+            font-size: $services-fz_mobile;
+        }
+    }
+    @media screen and (max-width: 500px){
+        p{
+            font-size: 16px;
+        }
+    }
+    @media screen and (max-width: 350px){
+        p{
+            font-size: 12px;
+        }
+    }
+}
+.order{
+    padding: 70px 120px 0 120px;
+    text-align: center;
+    margin-bottom: 35px;
+    p{
+        margin: 0 auto 30px auto;
+    }
+    &__form{
+        @include flex(space-between,$flex-wrap: wrap);
+    }
+    &__group{
+        @include flex($flex-direction: column);
+        margin-bottom: 30px;
+        flex-basis: 100%;
+    }
+    &__label{
+        font-family: $title-ff;
+        font-size: $big-fz;
+        color: $secondary-color-dark;
+        margin-bottom: 15px;
+        margin-right: auto;
+    }
+    &__input{
+        font-family: $sub-title-ff;
+        font-size: $standart-fz;
+        color: #929292;
+        width: 100%;
+        padding: 2px 10px;
+        background: $primary-color-light;
+        border-bottom: 3px solid $primary-color;
+    }
+    &__email, &__phone{
+        flex-basis: 47%;
+    }
+    &__message{
+        .order__input{
+            height: 140px;
+        }
+    }
+    .button{
+        margin: 0 auto;
+    }
+    @media screen and (max-width: 768px){
+        padding: 0 20px;
+    }
+    @media screen and (max-width: 500px){
+        &__email, &__phone{
+            flex-basis: 100%;
+        }
+        &__label{
+            font-size: $big-fz_mobile;
+        }
+        &__input{
+            font-size: $standart-fz_mobile;
+        }
+    }
+}
+.faq{
+    padding: 35px 120px 0 120px;
+    text-align: center;
+    margin-bottom: 35px;
+    p{
+        margin: 0 auto 80px auto;
+    }
+    &__question{
+        @include flex($flex-wrap: wrap, $justify-content: space-between);
+        width: 100%;
+        box-shadow: 0px 4px 30px 15px rgba(219, 213, 213, 0.25);
+        border-radius: 5px;
+        padding: 10px 15px 10px 20px;
+        margin-bottom: 20px;
+    }
+    // &__name{
+    //     @include flex(space-between);
+    //     width: 100%;
+    // }
+    &__title{
+        font-family: $title-ff;
+        font-size: $big-fz;
+        color: $secondary-color-dark;
+        flex-basis: 90%;
+        text-align: left;
+    }
+    &__plus{
+        flex-basis: 35px;
+        position: relative;
+        width: 35px;
+		height: 35px;
+        cursor: pointer;
+		&:after,
+		&:before {
+		    content: "";
+		    position: absolute;
+            background-color: $primary-color;
+            border-radius: 18px;
+		    left: 0;
+		    @include transition;
+		}
+		&:before {
+		    top: 16px;
+            width: 100%;
+            height: 3px;
+		}
+		&:after {
+		    left: 16px;
+            width: 3px;
+            height: 100%;
+		}
+		&_active {
+		    &:before {
+			    transform: rotate(45deg);
+		    }
+		    &:after {
+			    transform: rotate(-135deg);
+		    }
+		}
+    }
+    &__line{
+        display: none;
+        flex-basis: 100%;
+        height: 3px;
+        background: $primary-color;
+        margin: 20px 0;
+        &_active {
+		    display: block;
+		}
+    }
+    &__text{
+        display: none;
+        flex-basis: 95%;
+        font-family: $sub-title-ff;
+        font-size: $big-fz;
+        color: $secondary-color-dark;
+        text-align: left;
+        margin-bottom: 10px;
+        &_active {
+		    display: block;
+		}
+    }
+    @media screen and (max-width: 768px){
+        padding: 35px 20px;
+    }
+    @media screen and (max-width: 500px){
+        &__title{
+            flex-basis: 70%;
+            font-size: $big-fz_mobile;
+        }
+        &__text{
+            font-size: $standart-fz_mobile;
+        }
+    }
+}
+.gallery{
+    padding: 35px 25px;
+    text-align: center;
+    p{
+        margin: 0 auto 40px auto;
+    }
+    &__grid{
+        display: grid;
+        grid-template: repeat(2, minmax(100px, 1fr))/repeat(5, minmax(100px, 240px));
+        gap: 0;
+    }
+    &__element{
+        width: 100%;
+    }
+    @media screen and (max-width: 550px){
+        padding: 35px 0;
+    }
+    @media screen and (max-width: 500px){
+        &__grid{
+            grid-template: repeat(5, minmax(100px, 1fr))/repeat(2, minmax(100px, 240px));
+        }
+    }
+}
+.contact{
+    padding: 35px 25px 0 25px;
+    text-align: center;
+    p{
+        margin: 0 auto 40px auto;
+    }
+    &__main{
+        @include flex;
+    }
+    &__map{
+        max-width: 580px;
+        width: 100%;
+    }
+    &__content{
+        max-width: 540px;
+        img{
+            width: 100%;
+        }
+    }
+    &__email, &__phone{
+        max-width: 400px;
+        width: 100%;
+        margin: 0 auto 35px auto;
+        @include flex($justify-content: space-between);
+        svg{
+            margin-right: 10px;
+        }
+        p{
+            font-size: 36px;
+            color: $secondary-color;
+            margin-bottom: 0;
+        }
+    }
+    &__phone{
+        padding-left: 10px;
+    }
+    @media screen and (max-width: 768px){
+        &__main{
+            @include flex($flex-direction: column);
+        }
+    }
+    @media screen and (max-width: 500px){
+        &__email, &__phone{
+            max-width: 220px;
+            p{
+                font-size: 20px;
+            }
+        }
+        &__email{
+            svg{
+                width: 30px;
+                height: 24px;
+            }
+        }
+        &__phone{
+            svg{
+                width: 20px;
+                height: 30px;
+            }
+        }
+    }
+}
+.footer{
+    padding: 70px 0;
+    background: url(/assets/img/footer.png) center center;
+    &__wrapper{
+        max-width: 1000px;
+        padding: 0 10px;
+        width: 100%;
+        margin: 0 auto;
+        @include flex(space-between, $align-items: baseline, $flex-wrap: wrap);
+    }
+    &__logo{
+        @include flex($align-items:baseline);
+        font-family: $title-ff;
+        font-size: $big-fz;
+        color: $contrast-color;
+        max-width: 120px;
+        margin-bottom: 25px;
+    }
+    &__dot{
+        width: 9px;
+        height: 10px;
+        background: $contrast-color;
+        border-radius: 10px;
+        margin: 0 3px 0 3px;
+    }
+    p{
+        color: $contrast-color;
+        margin-bottom: 32px;
+        max-width: 300px;
+    }
+    &__networks{
+        max-width: 180px;
+        @include flex(space-between);
+
+    }
+    &__icon{
+        background: $primary-color-light;
+        padding: 14px;
+        border-radius: 4px;
+    }
+    &__title{
+        font-family: $title-ff;
+        font-size: $big-fz;
+        color: $contrast-color;
+        margin-bottom: 25px;
+    }
+    &__link{
+        margin-bottom: 40px;
+    }
+    a{
+        font-family: $sub-title-ff;
+        font-size: $standart-fz;
+        color: $contrast-color;
+    }
+    &__email, &__phone{
+        @include flex($justify-content: space-between);
+        p{
+            font-size: $big-fz;
+            margin-bottom: 0;
+            margin-left: 15px;
+        }
+    }
+    &__email{
+        margin-bottom: 20px;
+    }
+    &__phone{
+        padding-left: 5px;
+    }
+    &__line{
+        margin-top: 50px;
+        width: 100%;
+        height: 2px;
+        background: $contrast-color;
+    }
+    @media screen and (max-width:768px){
+        &__wrapper{
+            justify-content: space-around;
+        }
+    }
+    @media screen and (max-width:500px){
+        &__wrapper{
+            flex-direction: column;
+        }
+        &__content, &__contact, &__navigation{
+            margin: 0 auto;
+        }
+        &__content{
+            margin-bottom: 40px;
+        }
+        &__navigation, &__contact{
+            max-width: 300px;
+            width: 100%;
+        }
+        &__email, &__phone{
+            p{
+                font-size: $big-fz_mobile;
+            }
+        }
+    }
+}
+.content{
+    padding-bottom: 70px;
+    &__title{
+        font-family: $title-ff;
+        font-size: $primary-title-fz;
+        color: $secondary-color-dark;
+        margin-bottom: 20px;
+    }
+    &__product{
+        width: 100%;
+        margin-bottom: 20px;
+        img{
+            width: 100%;
+        }
+    }
+    &__sub-title{
+        font-family: $title-ff;
+        font-size: $title-fz;
+        color: $secondary-color-dark;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    p{
+        max-width: 1200px;
+        width: 100%;
+        color: $secondary-color-dark;
+        margin-bottom: 15px;
+    }
+    &__list{
+        li{
+            font-family: $sub-title-ff;
+            font-size: $standart-fz;
+            color: $secondary-color-dark;
+            margin-bottom: 20px;
+            &::before{
+                content: '';
+                display: inline-block;
+                border-radius: 20px;
+                width: 10px;
+                height: 10px;
+                margin-right: 10px;
+                background: $primary-color;
+            }
+        }
+    }
+    &__video{
+        @include flex;
+        height: 500px;
+        img{
+            width: 50%;
+            height: 100%;
+        }
+    }
+    @media screen and (max-width:768px){
+        &__title{
+            font-size: $primary-title-fz_mobile;
+        }
+        &__sub-title{
+            font-size: 28px;
+        }
+        p, li{
+            font-size: $standart-fz_mobile;
+        }
+        &__video{
+
+            height: 250px;
+        }
+    }
+}
