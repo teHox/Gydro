@@ -57,19 +57,18 @@ p{
     }
     &__logo{
         @include flex($align-items:baseline);
-        font-family: $title-ff;
-        font-size: $big-fz;
-        color: $secondary-color-dark;
+        font-family: $title-ff !important;
+        font-size: $big-fz !important;
+        color: $secondary-color-dark !important;
+        margin-right: 0 !important;
     }
-    &__menu{
-        a{
-            font-family: $sub-title-ff;
-            font-size: $standart-fz;
-            color: $secondary-color-dark;
-            margin-right: 30px;
-            &:hover{
-                color: $primary-color;
-            }
+    a{
+        font-family: $sub-title-ff;
+        font-size: $standart-fz;
+        color: $secondary-color-dark;
+        margin-right: 30px;
+        &:hover{
+            color: $primary-color;
         }
     }
     &__dot{
