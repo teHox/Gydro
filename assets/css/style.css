@@ -181,15 +181,6 @@ p {
   -webkit-transition: all ease 0.2s;
   transition: all ease 0.2s;
 }
-.header a {
-  font-family: "DM Sans", sans-serif;
-  font-size: 18px;
-  color: #1A1A1A;
-  margin-right: 30px;
-}
-.header a:hover {
-  color: #086CF9;
-}
 .header__logo {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -206,9 +197,18 @@ p {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  font-family: "Nunito", sans-serif;
-  font-size: 24px;
+  font-family: "Nunito", sans-serif !important;
+  font-size: 24px !important;
+  color: #1A1A1A !important;
+}
+.header a {
+  font-family: "DM Sans", sans-serif;
+  font-size: 18px;
   color: #1A1A1A;
+  margin-right: 30px;
+}
+.header a:hover {
+  color: #086CF9;
 }
 .header__dot {
   width: 9px;

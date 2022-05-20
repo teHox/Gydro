@@ -55,6 +55,12 @@ p{
         @include flex(space-between);
         @include transition;
     }
+    &__logo{
+        @include flex($align-items:baseline);
+        font-family: $title-ff !important;
+        font-size: $big-fz !important;
+        color: $secondary-color-dark !important;
+    }
     a{
         font-family: $sub-title-ff;
         font-size: $standart-fz;
@@ -63,12 +69,6 @@ p{
         &:hover{
             color: $primary-color;
         }
-    }
-    &__logo{
-        @include flex($align-items:baseline);
-        font-family: $title-ff;
-        font-size: $big-fz;
-        color: $secondary-color-dark;
     }
     &__dot{
         width: 9px;
