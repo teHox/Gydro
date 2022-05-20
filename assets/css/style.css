@@ -834,7 +834,9 @@ p {
 
 .footer {
   padding: 70px 0;
-  background: url(/assets/img/footer.png) center center;
+  background-image: url(/assets/img/footer.png);
+  background-position: center;
+  background-color: #4F85A4;
 }
 .footer__wrapper {
   max-width: 1000px;
