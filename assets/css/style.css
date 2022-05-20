@@ -471,7 +471,7 @@ p {
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
-    width: 60%;
+    width: 80%;
     margin: 0 auto 30px auto;
   }
   .servece__content {
