@@ -431,7 +431,7 @@ p {
 }
 
 .servece {
-  padding: 50px 0 70px 0;
+  padding: 35px 0;
   background: #ECF4FF;
 }
 .servece__product {
@@ -498,9 +498,8 @@ p {
 }
 
 .order {
-  padding: 70px 120px 0 120px;
+  padding: 35px 120px;
   text-align: center;
-  margin-bottom: 35px;
 }
 .order p {
   margin: 0 auto 30px auto;
