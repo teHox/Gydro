@@ -727,9 +727,7 @@ p {
 }
 @media screen and (max-width: 500px) {
   .gallery__grid {
-    -ms-grid-rows: (minmax(100px, 1fr))[5];
-    -ms-grid-columns: (minmax(100px, 240px))[2];
-        grid-template: repeat(5, minmax(100px, 1fr))/repeat(2, minmax(100px, 240px));
+    grid-template: repeat(5, minmax(100px, 1fr))/repeat(2, minmax(100px, 240px));
   }
 }
 
@@ -847,9 +845,8 @@ p {
 
 .footer {
   padding: 70px 0;
-  background-image: url(/assets/img/footer.png);
-  background-position: center;
-  background-color: #4F85A4;
+  background: url(/assets/img/footer.png) center center no-repeat;
+  background-size: cover;
 }
 .footer__wrapper {
   max-width: 1000px;
