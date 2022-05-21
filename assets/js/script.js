@@ -1,3 +1,5 @@
+AOS.init();
+
 let burgerBtn = document.querySelector(".burger-btn");
 let headerMenu = document.querySelector(".header__menu");
 
