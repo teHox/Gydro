@@ -570,7 +570,7 @@ p {
 }
 @media screen and (max-width: 768px) {
   .order {
-    padding: 0 20px;
+    padding: 35px 20px;
   }
 }
 @media screen and (max-width: 500px) {
@@ -587,9 +587,8 @@ p {
 }
 
 .faq {
-  padding: 35px 120px 0 120px;
+  padding: 35px 120px 35px 120px;
   text-align: center;
-  margin-bottom: 35px;
 }
 .faq p {
   margin: 0 auto 80px auto;
@@ -688,6 +687,9 @@ p {
   .faq {
     padding: 35px 20px;
   }
+  .faq p {
+    margin-bottom: 40px;
+  }
 }
 @media screen and (max-width: 500px) {
   .faq__title {
@@ -759,6 +761,9 @@ p {
   max-width: 580px;
   width: 100%;
 }
+.contact__map img {
+  width: 100%;
+}
 .contact__content {
   max-width: 540px;
 }
@@ -796,6 +801,11 @@ p {
 .contact__phone {
   padding-left: 10px;
 }
+@media screen and (max-width: 960px) {
+  .contact__email p, .contact__phone p {
+    font-size: 30px;
+  }
+}
 @media screen and (max-width: 768px) {
   .contact__main {
     display: -webkit-box;
@@ -813,6 +823,9 @@ p {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+  .contact__map {
+    margin-bottom: 20px;
   }
 }
 @media screen and (max-width: 500px) {
@@ -965,6 +978,9 @@ p {
   background: #ffffff;
 }
 @media screen and (max-width: 768px) {
+  .footer {
+    padding: 50px 0;
+  }
   .footer__wrapper {
     -ms-flex-pack: distribute;
         justify-content: space-around;
