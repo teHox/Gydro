@@ -727,7 +727,9 @@ p {
 }
 @media screen and (max-width: 500px) {
   .gallery__grid {
-    grid-template: repeat(5, minmax(100px, 1fr))/repeat(2, minmax(100px, 240px));
+    -ms-grid-rows: (minmax(100px, 1fr))[5];
+    -ms-grid-columns: (minmax(100px, 240px))[2];
+        grid-template: repeat(5, minmax(100px, 1fr))/repeat(2, minmax(100px, 240px));
   }
 }
 
@@ -845,7 +847,7 @@ p {
 
 .footer {
   padding: 70px 0;
-  background: url(/assets/img/footer.png) center center no-repeat;
+  background: url(../img/good_footer.png) center center no-repeat;
   background-size: cover;
 }
 .footer__wrapper {

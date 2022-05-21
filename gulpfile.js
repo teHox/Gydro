@@ -7,7 +7,7 @@ const sass = gulpSass(dartSass);
 
 const cleanCss = require("gulp-clean-css");
 
-const scssPath = "./scss/**/*";
+const scssPath = "./assets/scss/**/*";
 
 const styles = () =>
   src(scssPath + ".scss")
